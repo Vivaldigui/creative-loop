@@ -11,12 +11,12 @@ WORKDIR /app
 COPY packages/ ./packages/
 
 # ── Copy API source ─────────────────────────────────────────────────
-COPY apps/api/ ./
+COPY apps/api/ ./apps/api/
 COPY migrations/ ./migrations/
 COPY alembic.ini ./alembic.ini
 
 # ── Install Python deps (editable so packages/* is on sys.path) ─────
-RUN pip install --no-cache-dir -e "."
+RUN pip install --no-cache-dir -e "./apps/api"
 
 # ── Working dir for uvicorn / celery (contains app/, alembic.ini) ───
 WORKDIR /app
