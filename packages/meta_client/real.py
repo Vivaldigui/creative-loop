@@ -72,7 +72,7 @@ class RealMetaClient:
     async def list_ad_accounts(self) -> list[dict[str, Any]]:
         data = await self._transport.get(
             "me/adaccounts",
-            {"fields": "id,name,currency,timezone_name,account_status,business"},
+            {"fields": "id,name,currency,timezone_name,account_status"},
         )
         return data.get("data", [])
 

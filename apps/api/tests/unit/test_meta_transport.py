@@ -18,6 +18,7 @@ from meta_client.transport import (  # noqa: E402
     MetaRateLimitError,
     MetaWriteForbiddenError,
 )
+from meta_client.real import RealMetaClient  # noqa: E402
 
 
 @pytest.fixture
@@ -81,6 +82,27 @@ async def test_request_id_attached(transport):
     )
     result = await transport.get("test", {})
     assert result["_request_id"] == "req_abc123"
+
+
+@respx.mock
+@pytest.mark.asyncio
+async def test_list_ad_accounts_only_requests_ads_read_fields():
+    route = respx.get("https://graph.facebook.com/v21.0/me/adaccounts").mock(
+        return_value=httpx.Response(200, json={"data": [{"id": "act_123"}]})
+    )
+    client = RealMetaClient(
+        access_token="test_token",
+        app_secret="test_secret",
+        api_version="v21.0",
+        max_retries=1,
+    )
+
+    accounts = await client.list_ad_accounts()
+
+    assert accounts == [{"id": "act_123"}]
+    fields = route.calls.last.request.url.params["fields"]
+    assert fields == "id,name,currency,timezone_name,account_status"
+    assert "business" not in fields
 
 
 # ── Auth error — no retry ─────────────────────────────────────────
