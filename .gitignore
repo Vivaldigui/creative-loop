@@ -29,8 +29,10 @@ apps/web/.next/
 apps/web/node_modules/
 
 # Storage (dev files — contain no real ad data)
-storage/
-!storage/.gitkeep
+/storage/*
+!/storage/.gitkeep
+/apps/api/storage/
+/apps/web/storage/
 
 # OS
 .DS_Store
