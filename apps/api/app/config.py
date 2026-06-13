@@ -3,6 +3,7 @@ from __future__ import annotations
 from functools import lru_cache
 from pathlib import Path
 from typing import Literal
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -176,13 +177,31 @@ class Settings(BaseSettings):
 
     @field_validator("database_url")
     @classmethod
-    def resolve_relative_sqlite_path(cls, v: str) -> str:
+    def normalize_database_url(cls, v: str) -> str:
         prefix = "sqlite+aiosqlite:///./"
-        if not v.startswith(prefix):
-            return v
-        base_dir = Path(ENV_FILE).resolve().parent if Path(ENV_FILE).is_file() else Path.cwd()
-        database_path = (base_dir / v.removeprefix(prefix)).resolve().as_posix()
-        return f"sqlite+aiosqlite:///{database_path}"
+        if v.startswith(prefix):
+            base_dir = Path(ENV_FILE).resolve().parent if Path(ENV_FILE).is_file() else Path.cwd()
+            database_path = (base_dir / v.removeprefix(prefix)).resolve().as_posix()
+            return f"sqlite+aiosqlite:///{database_path}"
+
+        if v.startswith(("postgresql://", "postgres://")):
+            parsed = urlsplit(v)
+            query = []
+            for key, value in parse_qsl(parsed.query, keep_blank_values=True):
+                if key == "channel_binding":
+                    continue
+                query.append(("ssl" if key == "sslmode" else key, value))
+            return urlunsplit(
+                (
+                    "postgresql+asyncpg",
+                    parsed.netloc,
+                    parsed.path,
+                    urlencode(query),
+                    parsed.fragment,
+                )
+            )
+
+        return v
 
     @property
     def cors_origins_list(self) -> list[str]:
