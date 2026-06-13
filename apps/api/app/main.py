@@ -58,6 +58,15 @@ def create_app() -> FastAPI:
         return JSONResponse(status_code=500, content={"detail": "Internal server error"})
 
     # ── Health endpoints ─────────────────────────────────────────
+    @app.get("/", include_in_schema=False)
+    async def root() -> dict:
+        return {
+            "service": "Creative Loop API",
+            "status": "ok",
+            "health": "/healthz",
+            "docs": "/docs",
+        }
+
     @app.get("/healthz", tags=["Health"])
     async def healthz() -> dict:
         return {"status": "ok", "service": "creative-loop-api"}
@@ -67,6 +76,7 @@ def create_app() -> FastAPI:
         from sqlalchemy import text
 
         from app.db import get_engine
+
         try:
             engine = get_engine()
             async with engine.connect() as conn:
