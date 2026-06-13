@@ -1,0 +1,82 @@
+name: CI
+
+on:
+  push:
+    branches: ["main", "develop"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  backend:
+    name: Backend — lint + type-check + tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/api
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -e ".[dev]"
+        working-directory: apps/api
+
+      - name: Ruff lint
+        run: ruff check .
+
+      - name: Ruff format check
+        run: ruff format --check .
+
+      - name: mypy type-check
+        run: mypy app packages --ignore-missing-imports
+
+      - name: pytest
+        env:
+          DATABASE_URL: sqlite+aiosqlite:///:memory:
+          DATABASE_DRIVER: sqlite
+          SECRET_KEY: ci_secret_key_32bytes_for_ci_only!
+          ENCRYPTION_KEY: RKDlYJiLSiZ5mxJ4qI5V6J7E2A5j2sTLDEBHbexjf8U=
+          DRY_RUN: "true"
+          META_WRITE_ENABLED: "false"
+          REQUIRE_HUMAN_APPROVAL: "true"
+        run: pytest tests/ -q --tb=short
+        working-directory: apps/api
+
+  frontend:
+    name: Frontend — lint + type-check + build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/web
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: ESLint
+        run: npm run lint
+
+      - name: TypeScript check
+        run: npm run type-check
+
+      - name: Build
+        run: npm run build
+        env:
+          NEXT_PUBLIC_API_URL: http://localhost:8000

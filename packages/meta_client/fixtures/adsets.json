@@ -1,0 +1,80 @@
+{
+  "data": [
+    {
+      "id": "mock_adset_001",
+      "name": "[MOCK] Conjunto — Mulheres 25-44 Feed",
+      "campaign_id": "mock_campaign_001",
+      "optimization_goal": "OFFSITE_CONVERSIONS",
+      "billing_event": "IMPRESSIONS",
+      "bid_strategy": "LOWEST_COST_WITHOUT_CAP",
+      "targeting": {
+        "age_min": 25,
+        "age_max": 44,
+        "genders": [2],
+        "geo_locations": {"countries": ["BR"]},
+        "interests": [{"id": "6003139266461", "name": "Skincare"}]
+      },
+      "daily_budget": "2500",
+      "lifetime_budget": "0",
+      "effective_status": "ACTIVE"
+    },
+    {
+      "id": "mock_adset_002",
+      "name": "[MOCK] Conjunto — Lookalike Compradores",
+      "campaign_id": "mock_campaign_001",
+      "optimization_goal": "OFFSITE_CONVERSIONS",
+      "billing_event": "IMPRESSIONS",
+      "bid_strategy": "LOWEST_COST_WITHOUT_CAP",
+      "targeting": {
+        "age_min": 18,
+        "age_max": 65,
+        "genders": [],
+        "geo_locations": {"countries": ["BR"]},
+        "custom_audiences": [{"id": "mock_audience_001", "name": "Lookalike Compradores"}]
+      },
+      "daily_budget": "2500",
+      "lifetime_budget": "0",
+      "effective_status": "ACTIVE"
+    },
+    {
+      "id": "mock_adset_003",
+      "name": "[MOCK] Conjunto — Remarketing",
+      "campaign_id": "mock_campaign_002",
+      "optimization_goal": "REACH",
+      "billing_event": "IMPRESSIONS",
+      "bid_strategy": "LOWEST_COST_WITHOUT_CAP",
+      "targeting": {
+        "age_min": 18,
+        "age_max": 65,
+        "genders": [],
+        "geo_locations": {"countries": ["BR"]}
+      },
+      "daily_budget": "3000",
+      "lifetime_budget": "0",
+      "effective_status": "PAUSED"
+    },
+    {
+      "id": "mock_adset_004",
+      "name": "[MOCK] Conjunto — Leads Frios",
+      "campaign_id": "mock_campaign_003",
+      "optimization_goal": "LEAD_GENERATION",
+      "billing_event": "IMPRESSIONS",
+      "bid_strategy": "LOWEST_COST_WITHOUT_CAP",
+      "targeting": {
+        "age_min": 25,
+        "age_max": 55,
+        "genders": [2],
+        "geo_locations": {"countries": ["BR"]}
+      },
+      "daily_budget": "2000",
+      "lifetime_budget": "0",
+      "effective_status": "ACTIVE"
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "before": "mock_cursor_before_adsets",
+      "after": "mock_cursor_after_adsets"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+# Python
+**/__pycache__/
+**/*.py[cod]
+**/*.egg-info/
+**/.venv/
+**/venv/
+
+# Secrets — never bake into image
+.env
+.env.*
+!.env.example
+
+# Test artifacts
+**/.pytest_cache/
+**/.coverage
+**/htmlcov/
+**/.mypy_cache/
+**/.ruff_cache/
+
+# Node
+**/node_modules/
+apps/web/.next/
+
+# Storage (local dev files, not needed in image)
+storage/
+!storage/.gitkeep
+
+# Git
+.git/
+.github/
+
+# Docs / misc
+*.md
+*.db
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+postgres_data/
+redis_data/
+seed_test.db
+creative_loop.db

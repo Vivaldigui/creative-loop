@@ -1,0 +1,15 @@
+{
+  "data": [
+    {
+      "id": "act_mock_001",
+      "name": "[MOCK] Demo Ad Account",
+      "currency": "BRL",
+      "timezone_name": "America/Sao_Paulo",
+      "account_status": 1,
+      "business": {
+        "id": "mock_business_001",
+        "name": "[MOCK] Demo Business"
+      }
+    }
+  ]
+}

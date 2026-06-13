@@ -1,0 +1,119 @@
+{
+  "data": [
+    {
+      "id": "mock_ad_001",
+      "name": "[MOCK] Ad — Hero Shot 1x1",
+      "adset_id": "mock_adset_001",
+      "campaign_id": "mock_campaign_001",
+      "effective_status": "ACTIVE",
+      "configured_status": "ACTIVE",
+      "creative": {
+        "id": "mock_creative_001",
+        "name": "[MOCK] Criativo Hero Shot",
+        "title": "[MOCK] Glow That Lasts All Day",
+        "body": "[MOCK] Discover your most radiant skin yet.",
+        "call_to_action_type": "SHOP_NOW",
+        "link_url": "https://example.com/skinglow",
+        "image_hash": "mock_hash_001",
+        "image_url": null,
+        "thumbnail_url": null,
+        "object_story_spec": {
+          "page_id": "PREENCHER_META_PAGE_ID",
+          "link_data": {
+            "message": "[MOCK] Discover your most radiant skin yet.",
+            "link": "https://example.com/skinglow",
+            "caption": "example.com",
+            "image_hash": "mock_hash_001",
+            "call_to_action": {"type": "SHOP_NOW"}
+          }
+        }
+      }
+    },
+    {
+      "id": "mock_ad_002",
+      "name": "[MOCK] Ad — Lifestyle Stories",
+      "adset_id": "mock_adset_001",
+      "campaign_id": "mock_campaign_001",
+      "effective_status": "ACTIVE",
+      "configured_status": "ACTIVE",
+      "creative": {
+        "id": "mock_creative_002",
+        "name": "[MOCK] Criativo Lifestyle",
+        "title": "[MOCK] Feel Confident Every Morning",
+        "body": "[MOCK] Used by 50,000+ happy customers.",
+        "call_to_action_type": "LEARN_MORE",
+        "link_url": "https://example.com/skinglow/lifestyle",
+        "image_hash": "mock_hash_002",
+        "image_url": null,
+        "thumbnail_url": null,
+        "object_story_spec": null
+      }
+    },
+    {
+      "id": "mock_ad_003",
+      "name": "[MOCK] Ad — Ingredient Focus 4x5",
+      "adset_id": "mock_adset_002",
+      "campaign_id": "mock_campaign_001",
+      "effective_status": "ACTIVE",
+      "configured_status": "ACTIVE",
+      "creative": {
+        "id": "mock_creative_003",
+        "name": "[MOCK] Criativo Ingredientes",
+        "title": "[MOCK] 97% Naturally Derived",
+        "body": "[MOCK] Retinol + Hyaluronic Acid. Visible results in 2 weeks.",
+        "call_to_action_type": "BUY_NOW",
+        "link_url": "https://example.com/skinglow/ingredients",
+        "image_hash": "mock_hash_003",
+        "image_url": null,
+        "thumbnail_url": null,
+        "object_story_spec": null
+      }
+    },
+    {
+      "id": "mock_ad_004",
+      "name": "[MOCK] Ad — Text Heavy Promo",
+      "adset_id": "mock_adset_003",
+      "campaign_id": "mock_campaign_002",
+      "effective_status": "PAUSED",
+      "configured_status": "PAUSED",
+      "creative": {
+        "id": "mock_creative_004",
+        "name": "[MOCK] Criativo Promoção",
+        "title": "[MOCK] THE ULTIMATE SKIN SOLUTION — BUY 2 GET 1",
+        "body": "[MOCK] Don't miss this exclusive offer. LIMITED TIME.",
+        "call_to_action_type": "GET_OFFER",
+        "link_url": "https://example.com/skinglow/promo",
+        "image_hash": "mock_hash_004",
+        "image_url": null,
+        "thumbnail_url": null,
+        "object_story_spec": null
+      }
+    },
+    {
+      "id": "mock_ad_005",
+      "name": "[MOCK] Ad — Leads Form",
+      "adset_id": "mock_adset_004",
+      "campaign_id": "mock_campaign_003",
+      "effective_status": "ACTIVE",
+      "configured_status": "ACTIVE",
+      "creative": {
+        "id": "mock_creative_005",
+        "name": "[MOCK] Criativo Leads",
+        "title": "[MOCK] Receba dicas de skincare grátis",
+        "body": "[MOCK] Cadastre-se e receba um guia completo.",
+        "call_to_action_type": "SIGN_UP",
+        "link_url": null,
+        "image_hash": "mock_hash_005",
+        "image_url": null,
+        "thumbnail_url": null,
+        "object_story_spec": null
+      }
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "before": "mock_cursor_before_ads",
+      "after": "mock_cursor_after_ads"
+    }
+  }
+}

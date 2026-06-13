@@ -1,0 +1,49 @@
+{
+  "_comment": "Fixture with messy/ambiguous action_types for normalization tests.",
+  "data": [
+    {
+      "ad_id": "mock_ad_dirty_001",
+      "date_start": "2025-01-01",
+      "date_stop": "2025-01-31",
+      "impressions": "10000",
+      "reach": "9000",
+      "frequency": "1.11",
+      "spend": "100.00",
+      "clicks": "300",
+      "inline_link_clicks": "",
+      "ctr": "3.0",
+      "cpc": "0.33",
+      "cpm": "10.0",
+      "account_currency": "BRL",
+      "actions": [
+        {"action_type": "offsite_conversion.fb_pixel_purchase", "value": "10"},
+        {"action_type": "omni_purchase", "value": "12"},
+        {"action_type": "unknown_future_action", "value": "5"},
+        {"action_type": "video_thruplay_watched", "value": "200"}
+      ],
+      "action_values": [
+        {"action_type": "offsite_conversion.fb_pixel_purchase", "value": "bad_value"},
+        {"action_type": "omni_purchase", "value": "360.00"}
+      ],
+      "purchase_roas": []
+    },
+    {
+      "ad_id": "mock_ad_dirty_002",
+      "date_start": "2025-01-01",
+      "date_stop": "2025-01-31",
+      "impressions": null,
+      "reach": null,
+      "frequency": null,
+      "spend": null,
+      "clicks": null,
+      "inline_link_clicks": null,
+      "ctr": null,
+      "cpc": null,
+      "cpm": null,
+      "account_currency": "BRL",
+      "actions": [],
+      "action_values": [],
+      "purchase_roas": []
+    }
+  ]
+}

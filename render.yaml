@@ -1,0 +1,53 @@
+services:
+  - type: web
+    name: creative-loop-api
+    runtime: docker
+    plan: free
+    region: virginia
+    dockerfilePath: ./apps/api/Dockerfile
+    dockerContext: .
+    healthCheckPath: /readyz
+    autoDeployTrigger: commit
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DATABASE_DRIVER
+        value: postgres
+      - key: DATABASE_URL
+        sync: false
+      - key: SECRET_KEY
+        sync: false
+      - key: ENCRYPTION_KEY
+        sync: false
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 60
+      - key: ANTHROPIC_PROVIDER
+        value: mock
+      - key: IMAGE_PROVIDER
+        value: mock
+      - key: META_PROVIDER
+        value: mock
+      - key: STORAGE_BACKEND
+        value: s3
+      - key: S3_ENDPOINT
+        sync: false
+      - key: S3_BUCKET
+        sync: false
+      - key: S3_ACCESS_KEY
+        sync: false
+      - key: S3_SECRET_KEY
+        sync: false
+      - key: S3_REGION
+        value: auto
+      - key: DRY_RUN
+        value: true
+      - key: META_WRITE_ENABLED
+        value: false
+      - key: REQUIRE_HUMAN_APPROVAL
+        value: true
+      - key: MAX_DAILY_SPEND
+        value: 10.0
+      - key: MAX_AUTOMATIC_BUDGET_INCREASE_PERCENT
+        value: 0
+      - key: CORS_ORIGINS
+        value: https://example.invalid

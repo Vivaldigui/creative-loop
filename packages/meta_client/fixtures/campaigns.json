@@ -1,0 +1,46 @@
+{
+  "data": [
+    {
+      "id": "mock_campaign_001",
+      "name": "[MOCK] Conversões — SkinGlow Pro",
+      "objective": "OUTCOME_SALES",
+      "effective_status": "ACTIVE",
+      "configured_status": "ACTIVE",
+      "buying_type": "AUCTION",
+      "daily_budget": "5000",
+      "lifetime_budget": "0",
+      "start_time": "2025-01-01T00:00:00+0000",
+      "stop_time": null
+    },
+    {
+      "id": "mock_campaign_002",
+      "name": "[MOCK] Reconhecimento — SkinGlow",
+      "objective": "OUTCOME_AWARENESS",
+      "effective_status": "PAUSED",
+      "configured_status": "PAUSED",
+      "buying_type": "AUCTION",
+      "daily_budget": "3000",
+      "lifetime_budget": "0",
+      "start_time": "2024-10-01T00:00:00+0000",
+      "stop_time": null
+    },
+    {
+      "id": "mock_campaign_003",
+      "name": "[MOCK] Leads — Formulário",
+      "objective": "OUTCOME_LEADS",
+      "effective_status": "ACTIVE",
+      "configured_status": "ACTIVE",
+      "buying_type": "AUCTION",
+      "daily_budget": "2000",
+      "lifetime_budget": "0",
+      "start_time": "2025-02-01T00:00:00+0000",
+      "stop_time": null
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "before": "mock_cursor_before_campaigns",
+      "after": "mock_cursor_after_campaigns"
+    }
+  }
+}

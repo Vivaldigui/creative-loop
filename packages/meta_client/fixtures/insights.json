@@ -1,0 +1,161 @@
+{
+  "data": [
+    {
+      "ad_id": "mock_ad_001",
+      "ad_name": "[MOCK] Ad — Hero Shot 1x1",
+      "campaign_id": "mock_campaign_001",
+      "adset_id": "mock_adset_001",
+      "date_start": "2025-01-01",
+      "date_stop": "2025-03-31",
+      "impressions": "50000",
+      "reach": "42000",
+      "frequency": "1.19",
+      "spend": "420.00",
+      "clicks": "1800",
+      "inline_link_clicks": "1500",
+      "ctr": "3.6",
+      "cpc": "0.28",
+      "cpm": "8.40",
+      "account_currency": "BRL",
+      "attribution_setting": "7d_click",
+      "actions": [
+        {"action_type": "omni_purchase", "value": "42"},
+        {"action_type": "landing_page_view", "value": "1450"},
+        {"action_type": "omni_add_to_cart", "value": "120"},
+        {"action_type": "omni_initiated_checkout", "value": "65"},
+        {"action_type": "link_click", "value": "1500"},
+        {"action_type": "post_engagement", "value": "2200"},
+        {"action_type": "video_view", "value": "0"}
+      ],
+      "action_values": [
+        {"action_type": "omni_purchase", "value": "1344.00"}
+      ],
+      "purchase_roas": [
+        {"action_type": "omni_purchase", "value": "3.2"}
+      ]
+    },
+    {
+      "ad_id": "mock_ad_002",
+      "ad_name": "[MOCK] Ad — Lifestyle Stories",
+      "campaign_id": "mock_campaign_001",
+      "adset_id": "mock_adset_001",
+      "date_start": "2025-01-01",
+      "date_stop": "2025-03-31",
+      "impressions": "35000",
+      "reach": "30000",
+      "frequency": "1.17",
+      "spend": "290.00",
+      "clicks": "980",
+      "inline_link_clicks": "820",
+      "ctr": "2.8",
+      "cpc": "0.35",
+      "cpm": "8.29",
+      "account_currency": "BRL",
+      "attribution_setting": "7d_click",
+      "actions": [
+        {"action_type": "omni_purchase", "value": "18"},
+        {"action_type": "landing_page_view", "value": "800"},
+        {"action_type": "omni_add_to_cart", "value": "55"},
+        {"action_type": "link_click", "value": "820"}
+      ],
+      "action_values": [
+        {"action_type": "omni_purchase", "value": "551.00"}
+      ],
+      "purchase_roas": [
+        {"action_type": "omni_purchase", "value": "1.9"}
+      ]
+    },
+    {
+      "ad_id": "mock_ad_003",
+      "ad_name": "[MOCK] Ad — Ingredient Focus",
+      "campaign_id": "mock_campaign_001",
+      "adset_id": "mock_adset_002",
+      "date_start": "2025-01-01",
+      "date_stop": "2025-03-31",
+      "impressions": "62000",
+      "reach": "55000",
+      "frequency": "1.13",
+      "spend": "510.00",
+      "clicks": "2400",
+      "inline_link_clicks": "2100",
+      "ctr": "3.87",
+      "cpc": "0.24",
+      "cpm": "8.23",
+      "account_currency": "BRL",
+      "attribution_setting": "7d_click",
+      "actions": [
+        {"action_type": "omni_purchase", "value": "58"},
+        {"action_type": "landing_page_view", "value": "2000"},
+        {"action_type": "omni_add_to_cart", "value": "180"},
+        {"action_type": "omni_initiated_checkout", "value": "90"},
+        {"action_type": "link_click", "value": "2100"}
+      ],
+      "action_values": [
+        {"action_type": "omni_purchase", "value": "1938.00"}
+      ],
+      "purchase_roas": [
+        {"action_type": "omni_purchase", "value": "3.8"}
+      ]
+    },
+    {
+      "ad_id": "mock_ad_004",
+      "ad_name": "[MOCK] Ad — Text Heavy Promo",
+      "campaign_id": "mock_campaign_002",
+      "adset_id": "mock_adset_003",
+      "date_start": "2025-01-01",
+      "date_stop": "2025-03-31",
+      "impressions": "28000",
+      "reach": "25000",
+      "frequency": "1.12",
+      "spend": "380.00",
+      "clicks": "520",
+      "inline_link_clicks": "350",
+      "ctr": "1.86",
+      "cpc": "1.09",
+      "cpm": "13.57",
+      "account_currency": "BRL",
+      "attribution_setting": "7d_click",
+      "actions": [
+        {"action_type": "omni_purchase", "value": "4"},
+        {"action_type": "link_click", "value": "350"}
+      ],
+      "action_values": [
+        {"action_type": "omni_purchase", "value": "152.00"}
+      ],
+      "purchase_roas": [
+        {"action_type": "omni_purchase", "value": "0.4"}
+      ]
+    },
+    {
+      "ad_id": "mock_ad_005",
+      "ad_name": "[MOCK] Ad — Leads Form",
+      "campaign_id": "mock_campaign_003",
+      "adset_id": "mock_adset_004",
+      "date_start": "2025-02-01",
+      "date_stop": "2025-03-31",
+      "impressions": "18000",
+      "reach": "16000",
+      "frequency": "1.13",
+      "spend": "180.00",
+      "clicks": "640",
+      "inline_link_clicks": "0",
+      "ctr": "3.56",
+      "cpc": "0.28",
+      "cpm": "10.00",
+      "account_currency": "BRL",
+      "attribution_setting": "7d_click",
+      "actions": [
+        {"action_type": "lead", "value": "45"},
+        {"action_type": "onsite_conversion.lead_grouped", "value": "45"}
+      ],
+      "action_values": [],
+      "purchase_roas": []
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "before": "mock_cursor_before_insights",
+      "after": "mock_cursor_after_insights"
+    }
+  }
+}
