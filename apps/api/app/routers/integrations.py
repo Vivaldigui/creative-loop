@@ -54,7 +54,14 @@ async def test_integration(
             return {"provider": "anthropic", "status": "mock_ok",
                     "message": "Mock provider active — no real API call made."}
         from packages.anthropic_client.factory import get_anthropic_client
-        client = get_anthropic_client(prov)
+        client = get_anthropic_client(
+            provider=prov,
+            api_key=key,
+            model=settings.anthropic_model,
+            max_image_bytes=int(settings.anthropic_max_image_mb * 1_048_576),
+            price_input_per_mtok=settings.anthropic_price_input_per_mtok,
+            price_output_per_mtok=settings.anthropic_price_output_per_mtok,
+        )
         ok = await client.health_check()
         return {"provider": "anthropic", "status": "ok" if ok else "error"}
 
@@ -68,7 +75,13 @@ async def test_integration(
             return {"provider": "openai", "status": "mock_ok",
                     "message": "Mock provider active — no real API call made."}
         from packages.openai_image_client.factory import get_image_client
-        client = get_image_client(prov)
+        client = get_image_client(
+            provider=prov,
+            api_key=key,
+            model=settings.openai_image_model,
+            timeout_s=settings.openai_timeout_s,
+            max_retries=settings.openai_max_retries,
+        )
         ok = await client.health_check()
         return {"provider": "openai", "status": "ok" if ok else "error"}
 
